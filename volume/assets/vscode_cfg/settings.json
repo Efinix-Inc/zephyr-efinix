@@ -1,0 +1,14 @@
+{
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+          "path": "/usr/bin/bash"
+        }
+    },
+    "terminal.integrated.defaultProfile.linux":"bash",
+    "terminal.integrated.automationProfile.linux": {
+
+      "path": "/usr/bin/bash"
+  },
+    "cortex-debug.armToolchainPrefix": "riscv64-zephyr-elf"
+
+}
