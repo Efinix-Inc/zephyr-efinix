@@ -33,6 +33,6 @@ ADD https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLA
 RUN tar -C / -Jxpf /tmp/s6-overlay-x86_64.tar.xz
 ENTRYPOINT ["/init"]
 
-WORKDIR /app/zephyrrtos
+WORKDIR /zephyr
 USER user
  

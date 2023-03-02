@@ -1,14 +1,17 @@
-version: '1'
+version: '2'
 services:
   efinix_sapphire_zephyr_app:
     image: zephyr:efinix_test
     container_name: zephyr_efinix_sapphire
     privileged: true
+    user: "1000:1000"
+
     volumes:
-      - efinix_zephyr_sapphire:/app/zephyrrtos
+      - efinix_zephyr_sapphire:/app/zephyrrtos:ro
+      - zephyr:/zephyr:rw
+    command: bash -c "/app/zephyrrtos/inits_scripts/inital_setup.sh ;  tail -f /dev/null"
     stdin_open: true
     tty: true
-    command: sh -c "/app/zephyrrtos/inits_scripts/inital_setup.sh  && tail -f /dev/null"
 
 volumes:
   efinix_zephyr_sapphire:
@@ -17,3 +20,4 @@ volumes:
         type: none
         o: bind
         device: ./volume
+  zephyr:
