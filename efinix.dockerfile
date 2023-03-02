@@ -11,7 +11,12 @@ SHELL ["/bin/bash", "-c"]
 RUN apt-get -y update && \
 	apt-get -y upgrade && \
 	apt-get install --no-install-recommends -y nano \
-	usbutils
+	usbutils \
+	bash-completion \
+	curl && \
+	curl -SL https://github.com/efinix-sse/openocd_riscv/releases/download/v2022.2/openocd_linux.zip -o /tmp/openocd_linux.zip && \
+    unzip /tmp/openocd_linux.zip -d /opt && \
+    rm /tmp/openocd_linux.zip && chmod +x /opt/openocd
 #	openbox \
 #	python-xdg \
 #	libpython3.8-dev \
@@ -19,13 +24,12 @@ RUN apt-get -y update && \
 #	xterm \
 #	xz-utils
 
-RUN apt-get install bash-completion
-
 # Clean up stale packages
 RUN apt-get clean -y && \
 	apt-get autoremove --purge -y && \
 	rm -rf /var/lib/apt/lists/*
 
+RUN echo "export PATH=\"/opt/:$PATH\"" >> /home/user/.bashrc
 
 #Let s6 take care of the rest 
 ADD https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-noarch.tar.xz /tmp
@@ -36,4 +40,4 @@ ENTRYPOINT ["/init"]
 
 WORKDIR /zephyr
 USER user
- 
+
