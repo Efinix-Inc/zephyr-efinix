@@ -10,7 +10,8 @@ SHELL ["/bin/bash", "-c"]
 # Install packages
 RUN apt-get -y update && \
 	apt-get -y upgrade && \
-	apt-get install --no-install-recommends -y nano
+	apt-get install --no-install-recommends -y nano \
+	usbutils
 #	openbox \
 #	python-xdg \
 #	libpython3.8-dev \

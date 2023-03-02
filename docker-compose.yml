@@ -6,10 +6,16 @@ services:
     privileged: true
     user: "1000:1000"
 
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+      - /dev/ttyUSB1:/dev/ttyUSB1
+      - /dev/ttyUSB2:/dev/ttyUSB2
+      - /dev/ttyUSB3:/dev/ttyUSB3
+
     volumes:
       - efinix_zephyr_sapphire:/app/zephyrrtos:ro
       - zephyr:/zephyr:rw
-    command: bash -c "/app/zephyrrtos/inits_scripts/inital_setup.sh ;  tail -f /dev/null"
+    command: bash -c "/app/zephyrrtos/inits_scripts/initial_setup.sh ;  tail -f /dev/null"
     stdin_open: true
     tty: true
 
