@@ -30,6 +30,7 @@ RUN apt-get clean -y && \
 	rm -rf /var/lib/apt/lists/*
 
 RUN echo "export PATH=\"/opt/:$PATH\"" >> /home/user/.bashrc
+RUN usermod -aG dialout user
 
 #Let s6 take care of the rest 
 ADD https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-noarch.tar.xz /tmp
