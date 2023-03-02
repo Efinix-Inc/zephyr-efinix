@@ -2,19 +2,21 @@
 FROM docker.io/zephyrprojectrtos/ci:v0.24.9-amd64
 
 USER root
+ARG S6_OVERLAY_VERSION=3.1.0.1
+ENV DEBIAN_FRONTEND noninteractive
+
+SHELL ["/bin/bash", "-c"]
+
 # Install packages
 RUN apt-get -y update && \
 	apt-get -y upgrade && \
-	apt-get install --no-install-recommends -y
+	apt-get install --no-install-recommends -y nano
 #	openbox \
 #	python-xdg \
 #	libpython3.8-dev \
 #	xvfb \
 #	xterm \
 #	xz-utils
-
-ARG S6_OVERLAY_VERSION=3.1.0.1
-ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get install bash-completion
 
