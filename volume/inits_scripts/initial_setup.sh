@@ -22,3 +22,13 @@ echo -e "\e[32mDone Creating Openocd config directory!!!\e[0m\n"
 fi
 
 
+if [ -d "/zephyr/vscode_cfg" ]; then
+    echo -e "\e[32mVSCode config directory already exists\e[0m\n"
+
+else
+echo -e "\e[32mCreating VSCode config directory ....\e[0m\n"
+mkdir /zephyr/vscode_cfg && \
+cp -r /app/zephyrrtos/assets/vscode_cfg/* /zephyr/vscode_cfg && \
+echo -e "\e[32mDone Creating VSCode config directory!!!\e[0m\n"
+fi
+

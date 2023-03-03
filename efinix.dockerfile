@@ -11,6 +11,7 @@ SHELL ["/bin/bash", "-c"]
 RUN apt-get -y update && \
 	apt-get -y upgrade && \
 	apt-get install --no-install-recommends -y nano \
+	minicom \
 	usbutils \
 	bash-completion \
 	curl && \
