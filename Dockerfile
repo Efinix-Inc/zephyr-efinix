@@ -4,7 +4,6 @@ USER root
 ARG S6_OVERLAY_VERSION=3.1.0.1
 ENV DEBIAN_FRONTEND noninteractive
 
-#SHELL ["/bin/bash", "-c"]
 
 # Install packages
 RUN apt-get -y update && \
