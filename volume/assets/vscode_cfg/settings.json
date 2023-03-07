@@ -1,0 +1,4 @@
+{
+    "terminal.integrated.defaultProfile.linux":"bash",
+    "cortex-debug.armToolchainPrefix": "riscv64-zephyr-elf"
+}

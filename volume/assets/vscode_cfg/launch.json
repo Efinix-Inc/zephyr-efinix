@@ -7,7 +7,7 @@
         {
             "name": "Efinix sapphire debug zepyhr",
             "cwd": "${workspaceFolder}",
-            "executable": "build/zephyr/zephyr.elf",
+            "executable": "zephyr/build/zephyr/zephyr.elf",
             "request": "attach",
             "type": "cortex-debug",
             //"runToEntryPoint": "main",
