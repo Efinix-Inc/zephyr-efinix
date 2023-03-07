@@ -4,7 +4,7 @@ USER root
 ARG S6_OVERLAY_VERSION=3.1.0.1
 ENV DEBIAN_FRONTEND noninteractive
 
-SHELL ["/bin/bash", "-c"]
+#SHELL ["/bin/bash", "-c"]
 
 # Install packages
 RUN apt-get -y update && \
@@ -23,7 +23,7 @@ RUN apt-get clean -y && \
 	apt-get autoremove --purge -y && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN echo "export PATH=\"/opt/:$PATH\"" >> /home/user/.bashrc
+#RUN echo "export PATH=\"/opt/:$PATH\"" >> /home/user/.bashrc
 RUN usermod -aG dialout user
 
 #Let s6 take care of the rest 
