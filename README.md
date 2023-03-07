@@ -63,7 +63,7 @@ Development Process
 
 4. Verify that everything went smoothly by checking the serial console, where you should see the message "Hello World!" It should look like in the image shown below
 
-![Expected console output](docs/images/boot_banner_hello_world.png "expected console output")
+ <img src="docs/images/boot_banner_hello_world.png" title="expected console output" alt="expected console output" width="616">
 
 
 
