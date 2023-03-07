@@ -1,4 +1,3 @@
-#pull stable version of CI image from docker hub
 FROM docker.io/zephyrprojectrtos/ci:v0.24.9-amd64
 
 USER root
@@ -18,12 +17,6 @@ RUN apt-get -y update && \
 	curl -SL https://github.com/efinix-sse/openocd_riscv/releases/download/v2022.2/openocd_linux.zip -o /tmp/openocd_linux.zip && \
     unzip /tmp/openocd_linux.zip -d /opt && \
     rm /tmp/openocd_linux.zip && chmod +x /opt/openocd
-#	openbox \
-#	python-xdg \
-#	libpython3.8-dev \
-#	xvfb \
-#	xterm \
-#	xz-utils
 
 # Clean up stale packages
 RUN apt-get clean -y && \

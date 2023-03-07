@@ -1,7 +1,7 @@
 version: '2'
 services:
-  efinix_sapphire_zephyr_app:
-    image: zephyr:efinix_test
+  efinix_sapphire_zephyr_app:    
+    image: efinix/zephyr:latest
     container_name: zephyr_efinix_sapphire
     privileged: true
     user: "1000:1000"
