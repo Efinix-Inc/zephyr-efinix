@@ -51,6 +51,22 @@ Setup
         - `cd /zephyr`
         - `./zephyr_efx_setup.sh` --> This script will pull the Zephyr project repo with Efinix board support
 
-## The development environment Zephyr project with Efinix support is ready. You can now start developing and testing your project
+- **The development environment Zephyr project with Efinix support is ready. You can now start developing and testing your project**
+
+Development Process
+--------------------
+1. Obtain the Efinix Sapphire RISC-V SoC bitstream, either by using the pre-configured one or by generating a configurable one yourself
+
+2. Obtain the zephyr firmware by running the script `./build` in the `/zephyr/zephyr` directory to build a sample "hello world" project
+
+3. Combine both the bitstream and firmware, and flash the resulting image
+
+4. Verify that everything went smoothly by checking the serial console, where you should see the message "Hello World!" It should look like in the image shown below
+
+![Expected console output](docs/images/boot_banner_hello_world.png "expected console output")
+
+
+
+
 
 
