@@ -20,14 +20,14 @@ Setup
 
     - Launch VS Code and Clone the repository to your local machine:
     - Open the Command Palette by pressing `Ctrl + Shift + P`
-    - Type "Git: Clone" and hit enter
+    - Type `"Git: Clone"` and hit enter
     -  Enter the current URL of the repository and hit enter
     - Choose the directory where you want to clone the repository and hit enter
     - When prompted, click on the "Open" button
 
 2. Install recommended VS Code extensions
 
-    - Open the Command Palette, Type "Extensions: Show Recommended Extensions" and hit enter
+    - Open the Command Palette, Type `"Extensions: Show Recommended Extensions"` and hit enter
     - Install all the recommended extensions shown in the list on top left corner of the screen
 
 3. Build the Docker image:
