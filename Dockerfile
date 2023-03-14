@@ -23,6 +23,7 @@ RUN apt-get clean -y && \
 	rm -rf /var/lib/apt/lists/*
 
 #RUN echo "export PATH=\"/opt/:$PATH\"" >> /home/user/.bashrc
+RUN echo 'export PATH="$PATH:/opt"' | tee /etc/profile.d/openocd.sh
 RUN usermod -aG dialout user
 
 #Let s6 take care of the rest 
