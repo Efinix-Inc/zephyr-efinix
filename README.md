@@ -59,8 +59,8 @@ Setup
 USBIP Setup for Windows:
 ------------------------
 1. Launch terminal as run as administrator
-2. `usbipd list` --> This command will list all the USB devices connected to the host machine, note down the BUS ID of the development board, it should be something like `Titanium Ti60F225 Development Kit`
-3.  usbipd wsl attach -b <BUS ID> --distribution Ubuntu-22.04 --> replace <BUS ID> with the actual BUS ID of the development board
+2. Run `usbipd list` --> This command will list all the USB devices connected to the host machine, note down the BUS ID of the development board, it should be something like `Titanium Ti60F225 Development Kit`
+3. Run `usbipd wsl attach -b <BUS ID> --distribution Ubuntu-22.04` --> replace <BUS ID> with the actual BUS ID of the development board
 
 
 Development Process
