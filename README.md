@@ -6,11 +6,14 @@ Prerequisites
 
 Before proceeding with the setup, ensure that the following software are installed on your computer:
 
-
+For all platforms:
 - Visual Studio Code (https://code.visualstudio.com/)
+- Docker Desktop (https://www.docker.com/products/docker-desktop)
+
+For Windows:
+
 - Ubuntu 22.04.2 LTS (https://apps.microsoft.com/store/detail/ubuntu-22042-lts/9PN20MSR04DW)
 - usbipd-win 2.4.1 (https://github.com/dorssel/usbipd-win/releases/download/v2.4.1/usbipd-win_2.4.1.msi)
-- Docker Desktop (https://www.docker.com/products/docker-desktop)
 - Git (https://git-scm.com/downloads)
 
 Setup
