@@ -11,11 +11,7 @@ RUN apt-get -y update && \
 	apt-get install --no-install-recommends -y nano \
 	minicom \
 	usbutils \
-	bash-completion \
-	curl && \
-	curl -SL https://github.com/efinix-sse/openocd_riscv/releases/download/v2022.2/openocd_linux.zip -o /tmp/openocd_linux.zip && \
-    unzip /tmp/openocd_linux.zip -d /opt && \
-    rm /tmp/openocd_linux.zip && chmod +x /opt/openocd
+	bash-completion
 
 # Clean up stale packages
 RUN apt-get clean -y && \
@@ -23,7 +19,7 @@ RUN apt-get clean -y && \
 	rm -rf /var/lib/apt/lists/*
 
 #RUN echo "export PATH=\"/opt/:$PATH\"" >> /home/user/.bashrc
-RUN echo 'export PATH="$PATH:/opt"' | tee /etc/profile.d/openocd.sh
+RUN echo 'export PATH="$PATH:/zephyr/bin"' | tee /etc/profile.d/openocd.sh
 RUN usermod -aG dialout user
 
 #Let s6 take care of the rest 

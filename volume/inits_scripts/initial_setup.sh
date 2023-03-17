@@ -71,5 +71,6 @@ else
 echo -e "\e[32mCopying Openocd ....\e[0m\n" && \
 mkdir -p /zephyr/bin && \
 unzip /app/zephyrrtos/assets/bin/openocd_linux.zip -d /zephyr/bin && \
+chmod +x /zephyr/bin/openocd && \
 echo -e "\e[32mDone Copied Openocd!!!\e[0m\n"
 fi
