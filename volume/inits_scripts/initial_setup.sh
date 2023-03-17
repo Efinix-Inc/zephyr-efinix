@@ -63,3 +63,13 @@ echo -e "\e[32mCopying VSCode settings.json ....\e[0m\n" && \
 cp /zephyr/vscode_cfg/settings.json /zephyr/.vscode/settings.json && \
 echo -e "\e[32mDone Copied VSCode settings.json!!!\e[0m\n"
 fi
+
+#check if openocd is installed
+if [ -f "/zephyr/bin/openocd" ]; then
+    echo -e "\e[32mOpenocd already installed\e[0m\n"
+else
+echo -e "\e[32mCopying Openocd ....\e[0m\n" && \
+mkdir -p /zephyr/bin && \
+unzip /app/zephyrrtos/assets/bin/openocd_linux.zip -d /zephyr/bin && \
+echo -e "\e[32mDone Copied Openocd!!!\e[0m\n"
+fi
