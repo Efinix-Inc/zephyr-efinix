@@ -75,6 +75,7 @@ Development Process
 
  <img src="docs/images/boot_banner_hello_world.png" title="expected console output" alt="expected console output" width="616">
 
+Note: The efinity project to generate bitstream is found in `volume/soc_efinity/sapphire_soc.zip`
 
 
 
