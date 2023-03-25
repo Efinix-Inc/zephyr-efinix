@@ -108,7 +108,8 @@ The resulting firmware will be located at `/zephyr/zephyr/build/zephyr/zephyr.bi
 What's Next?
 -------------
 - You may want debugging capabilities for your project. Refer to the [Debugging Guide](docs/debugging.md) for more information.
+
 Resources
-- More Zephyr Rtos samples can be found at [Samples](https://docs.zephyrproject.org/latest/samples/index.html)
 ----------
+- More Zephyr Rtos project samples can be found at [Samples](https://docs.zephyrproject.org/latest/samples/index.html)
 1. [Sapphire RISC-V SoC Hardware and Software User Guide](https://www.efinixinc.com/support/docsdl.php?s=ef&pn=SAPPHIREUG)
