@@ -69,6 +69,8 @@ Setup
 
 USBIP Setup for Windows:
 ------------------------
+
+**\*Skip these steps if you are using Linux or Mac OS**
 1. Launch terminal as run as administrator
 2. Run `usbipd list` --> This command will list all the USB devices connected to the host machine, note down the BUS ID of the development board, it should be something like `Titanium Ti60F225 Development Kit`
 3. Run `usbipd wsl attach -b <BUS ID> --distribution Ubuntu-22.04` --> replace <BUS ID> with the actual BUS ID of the development board
@@ -84,9 +86,18 @@ Development Process
 **OR**
 
 - **Generate a customized SoC yourself:**
-    - Refer to the [Sapphire RISC-V SoC Hardware and Software User Guide](#resources) for guidance on creating your own SoC. Review Chapter 1, 2, and 3 of the User Guide to gain a thorough understanding of the customization process.
+    - Refer to the [Sapphire RISC-V SoC Hardware and Software User Guide](#resources) for guidance on creating your own SoC. Review Chapter 1, 2, and 3 of the User Guide to gain a thorough understanding of the customization process
 
-2. Obtain the zephyr firmware, run the command `west build -b titanium_ti60_f225 /samples/hello_world -p always` from the `/zephyr/zephyr` directory to build a sample "hello world" project. The resulting firmware will be located at `/zephyr/zephyr/build/zephyr/zephyr.bin`, You need to download the `zephyr.bin` file to your host machine.
+2. Obtain the Zephyr firmware by running the following command from the `/zephyr/zephyr` directory to build the "Hello World" sample project:
+
+```
+west build -b titanium_ti60_f225 samples/hello_world -p always
+
+```
+The resulting firmware will be located at `/zephyr/zephyr/build/zephyr/zephyr.bin`. Download the `zephyr.bin` file to your host machine.
+
+
+
 
 3. Combine both the bitstream and firmware, and flash the resulting image, Refer to the [Sapphire RISC-V SoC Hardware and Software User Guide](#resources). Page 63, the section `Copy a User Binary to Flash (Efinity Programmer)`
 4. Verify that everything went smoothly by checking the serial console, where you should see the message "Hello World!" It should look like in the image shown below
@@ -98,5 +109,6 @@ What's Next?
 -------------
 - You may want debugging capabilities for your project. Refer to the [Debugging Guide](docs/debugging.md) for more information.
 Resources
+- More Zephyr Rtos samples can be found at [Samples](https://docs.zephyrproject.org/latest/samples/index.html)
 ----------
 1. [Sapphire RISC-V SoC Hardware and Software User Guide](https://www.efinixinc.com/support/docsdl.php?s=ef&pn=SAPPHIREUG)
