@@ -68,7 +68,17 @@ Setup
     - Execute the following commands:
         - `cd /zephyr`
         - `./zephyr_efx_setup.sh` --> This script will pull the Zephyr project repo with Efinix board support
-
+    - To use your own SoC Configuration, follow the steps below; 
+        - Generate your own SoC with our Efinity IP Manager
+        - Locate the soc.h which will be available in `embedded_sw/<soc name>/bsp/efinix/EfxSapphireSoc/include/soc.h`
+        - Run `./dts_gen_setup.sh` --> This script will pull the dt-generator repo for automated device tree generation
+        - Copy the soc.h from your SoC folder into the dt-generator folder
+        - The dt-generator will help you to update all the necessary files with your SoC configuration
+        - Run the following command: 
+```
+python3 zephyr_installer.py <soc name> <board name> <targeted device> ./zephyr/ ./dt-generator/soc.h
+python3 dt-generator/zephyr_installer.py my_soc1 my_board1 ti60 ./zephyr/ ./dt-generator/soc.h
+```
 - **The development environment Zephyr project with Efinix support is ready. You can now start developing and testing your project**
 
 USBIP Setup for Windows:
@@ -93,11 +103,17 @@ Development Process
     - Refer to the [Sapphire RISC-V SoC Hardware and Software User Guide](https://www.efinixinc.com/support/docsdl.php?s=ef&pn=SAPPHIREUG) for guidance on creating your own SoC. Review Chapter 1, 2, and 3 of the User Guide to gain a thorough understanding of the customization process
 
 2. Obtain the Zephyr firmware by running the following command from the `/zephyr/zephyr` directory to build the "Hello World" sample project:
-
+    - If you are using standard configuration
 ```
 west build -b titanium_ti60_f225 samples/hello_world -p always
 
 ```
+   - if you are using own SoC Configuration
+```
+west build -b <board name>_<targeted device> samples/hello_world -p always
+west build -b my_board1_ti60 samples/hello_world -p always # Example
+
+``` 
 The resulting firmware will be located at `/zephyr/zephyr/build/zephyr/zephyr.bin`. Download the `zephyr.bin` file to your host machine.
 
 3. Combine both the bitstream and firmware, and flash the resulting image, Refer to the [Sapphire RISC-V SoC Hardware and Software User Guide](https://www.efinixinc.com/support/docsdl.php?s=ef&pn=SAPPHIREUG) , The Section `Copy a User Binary to Flash (Efinity Programmer)`
