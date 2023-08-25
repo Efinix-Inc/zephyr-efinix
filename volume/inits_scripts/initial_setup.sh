@@ -9,7 +9,26 @@ cd /zephyr && touch zephyr_efx_setup.sh && echo "west init -m https://github.com
 > zephyr_efx_setup.sh && chmod +x zephyr_efx_setup.sh && \
 echo -e "\e[32mZephyr init script created!!!!\e[0m\n"
 echo -e "\e[32mRun { cd /zephyr && ./zephyr_efx_setup.sh } - to setup zephyr repo\e[0m\n"
+
 fi
+
+if [ -e "/zephyr/dts_gen_setup.sh" ]; then
+    echo -e "\e[32mdts_gen_setup.sh already exists\e[0m\n"
+
+else
+echo -e "\e[32mCopying soc_debugger_setup.sh to /zepyhr....\e[0m\n"
+cp -r /app/zephyrrtos/assets/soc_debugger_setup.sh /zephyr && \
+echo -e "\e[32mDone copying soc_debugger_setup.sh to /zephyr!!!\e[0m\n"
+fi 
+
+if [ -e "/zephyr/dts_gen_setup.sh" ]; then
+    echo -e "\e[32mdts_gen_setup.sh already exists\e[0m\n"
+
+else
+echo -e "\e[32mCopying dts_gen_setup.sh to /zepyhr....\e[0m\n"
+cp -r /app/zephyrrtos/assets/dts_gen_setup.sh /zephyr && \
+echo -e "\e[32mDone copying dts_gen_setup.sh to /zephyr!!!\e[0m\n"
+fi 
 
 if [ -d "/zephyr/openocd_cfg" ]; then
     echo -e "\e[32mOpenocd config directory already exists\e[0m\n"

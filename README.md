@@ -68,6 +68,8 @@ Setup
     - Execute the following commands:
         - `cd /zephyr`
         - `./zephyr_efx_setup.sh` --> This script will pull the Zephyr project repo with Efinix board support
+        - `./soc_debugger_setup.sh` --> This script will pull SoC Debugger repo for debugging Efinix RISC-V Sapphire SoC into soc_debugger folder
+        > **_NOTE:_**     Use Command `sudo chmod 777 <script name>.sh` to allow the .sh script to be executable.
     - To use your own SoC Configuration, follow the steps below; 
         - Generate your own SoC with our Efinity IP Manager
         - Locate the soc.h which will be available in `embedded_sw/<soc name>/bsp/efinix/EfxSapphireSoc/include/soc.h`
