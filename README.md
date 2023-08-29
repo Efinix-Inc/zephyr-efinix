@@ -69,7 +69,7 @@ Setup
         - `cd /zephyr`
         - `./zephyr_efx_setup.sh` --> This script will pull the Zephyr project repo with Efinix board support
         - `./soc_debugger_setup.sh` --> This script will pull SoC Debugger repo for debugging Efinix RISC-V Sapphire SoC into soc_debugger folder
-        > **_NOTE:_**     Use Command `sudo chmod 777 <script name>.sh` to allow the .sh script to be executable.
+        > ***Note:***     Use Command `sudo chmod 777 <script name>.sh` to allow the .sh script to be executable.
     - To use your own SoC Configuration, follow the steps below; 
         - Generate your own SoC with our Efinity IP Manager
         - Locate the soc.h which will be available in `embedded_sw/<soc name>/bsp/efinix/EfxSapphireSoc/include/soc.h`
@@ -78,9 +78,21 @@ Setup
         - The dt-generator will help you to update all the necessary files with your SoC configuration
         - Run the following command: 
 ```
-python3 zephyr_installer.py <soc name> <board name> <targeted device> ./zephyr/ ./dt-generator/soc.h
-python3 dt-generator/zephyr_installer.py my_soc1 my_board1 ti60 ./zephyr/ ./dt-generator/soc.h
+python3 zephyr_installer.py <soc name> <board name> <targeted device> ./zephyr/ ./dt-generator/soc.h <-m memory configuration>
 ```
+```
+Arguments
+
+<soc name>                  Custom soc name 
+<board name>                Custom board name
+<targeted device>           Targeted device, i.e. T120, Ti60 and Ti180
+<-m memory configuration>   [Optional] RAM memory (e.g. int (on-chip RAM), ext(DDR)). Default: int. 
+                            Internal memory will be used if no external memory detected in soc.h even with external memory selected.
+
+Example,
+python3 dt-generator/zephyr_installer.py my_soc1 my_board1 ti60 ./zephyr/ ./dt-generator/soc.h -m int
+```
+
 - **The development environment Zephyr project with Efinix support is ready. You can now start developing and testing your project**
 
 USBIP Setup for Windows:
@@ -91,6 +103,7 @@ USBIP Setup for Windows:
 2. Run `usbipd list` --> This command will list all the USB devices connected to the host machine, note down the BUS ID of the development board, it should be something like `Titanium Ti60F225 Development Kit`
 3. Run `usbipd wsl attach -b <BUS ID> --distribution Ubuntu-22.04` --> replace <BUS ID> with the actual BUS ID of the development board
 
+> ***Note:*** If your device is detected in the terminal but "no device found" error occur when launch debug, you may use the command `mount -t devtmpfs none /dev` to mount the USB to '/dev' directory
 
 Development Process
 --------------------
@@ -108,13 +121,13 @@ Development Process
     - If you are using standard configuration
 ```
 west build -b titanium_ti60_f225 samples/hello_world -p always
-
 ```
    - if you are using own SoC Configuration
 ```
 west build -b <board name>_<targeted device> samples/hello_world -p always
-west build -b my_board1_ti60 samples/hello_world -p always # Example
 
+Example; 
+west build -b my_board1_ti60 samples/hello_world -p always # Example
 ``` 
 The resulting firmware will be located at `/zephyr/zephyr/build/zephyr/zephyr.bin`. Download the `zephyr.bin` file to your host machine.
 
