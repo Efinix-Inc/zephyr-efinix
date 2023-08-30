@@ -86,11 +86,11 @@ Arguments
 <soc name>                  Custom soc name 
 <board name>                Custom board name
 <targeted device>           Targeted device, i.e. T120, Ti60 and Ti180
-<-m memory configuration>   [Optional] RAM memory (e.g. int (on-chip RAM), ext(DDR)). Default: int. 
+<-em>|<--extmemory>         [Optional] Select external RAM memory (DDR). 
                             Internal memory will be used if no external memory detected in soc.h even with external memory selected.
 
 Example,
-python3 dt-generator/zephyr_installer.py my_soc1 my_board1 ti60 ./zephyr/ ./dt-generator/soc.h -m int
+python3 dt-generator/zephyr_installer.py my_soc1 my_board1 ti60 ./zephyr/ ./dt-generator/soc.h -em
 ```
 
 - **The development environment Zephyr project with Efinix support is ready. You can now start developing and testing your project**
