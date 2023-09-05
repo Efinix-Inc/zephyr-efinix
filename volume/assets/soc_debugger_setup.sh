@@ -1,1 +1,1 @@
-git clone http://gitlab/mnalim/soc_debugger.git
+git clone https://github.com/Efinix-Inc/soc-debugger.git soc_debugger
