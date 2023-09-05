@@ -1,0 +1,1 @@
+git clone https://github.com/Efinix-Inc/soc-debugger.git soc_debugger
