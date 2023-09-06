@@ -103,7 +103,7 @@ USBIP Setup for Windows:
 2. Run `usbipd list` --> This command will list all the USB devices connected to the host machine, note down the BUS ID of the development board, it should be something like `Titanium Ti60F225 Development Kit`
 3. Run `usbipd wsl attach -b <BUS ID> --distribution Ubuntu-22.04` --> replace <BUS ID> with the actual BUS ID of the development board
 
-> ***Note:*** If your device is detected in the terminal but "no device found" error occur when launch debug, you may use the command `mount -t devtmpfs none /dev` to mount the USB to '/dev' directory
+> ***Note:*** If your device is detected in the terminal but "no device found" error occur when launch debug, you may use the command `sudo mount -t devtmpfs none /dev` to mount the USB to '/dev' directory
 
 Development Process
 --------------------
@@ -140,6 +140,15 @@ The resulting firmware will be located at `/zephyr/zephyr/build/zephyr/zephyr.bi
 What's Next?
 -------------
 - You may want debugging capabilities for your project. Refer to the [Debugging Guide](docs/debugging.md) for more information.
+
+Driver Supported
+------------
+1. UART/ Serial 
+- uart_efinix_sapphire.c
+2. General Purpose Input/ Output, GPIO 
+- gpio_efinix_sapphire.c 
+
+> ***Note:*** More drivers support will be added. User may refer to the provided drivers as example to create their own drivers. 
 
 Resources
 ----------
