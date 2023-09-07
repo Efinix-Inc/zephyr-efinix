@@ -65,8 +65,8 @@ Setup
 5. **Initial setup of the development environment**
     
     - Ensure that the following directory available in the /zephyr directory:
-        - /soc_debugger -> OpenOCD Configuration script for Efinix Sapphire SoC: [github:soc-debugger](https://github.com/Efinix-Inc/soc-debugger)
-        - /dt-generator -> Device Tree Generator repository for Efinix Saphhire SoC [github:dt-generator](https://github.com/Efinix-Inc/dt-generator)
+        - /soc_debugger -> OpenOCD Configuration script for Efinix Sapphire SoC: [github:sapphire-soc-debugger](https://github.com/Efinix-Inc/sapphire-soc-debugger)
+        - /dt-generator -> Device Tree Generator repository for Efinix Saphhire SoC [github:sapphire-soc-dt-generator](https://github.com/Efinix-Inc/sapphire-soc-dt-generator)
         - /zephyr       -> Zephyr repository for Zephyr project [github:zephyr](https://github.com/Efinix-Inc/zephyr)
     > ***Note:*** If any of the directory is not exist in the /zephyr directory, you may manually clone the respective repository. 
     - Open the terminal in VS Code, In the command palette, type `Terminal: Create New Terminal (In Active Workspace)` and hit enter

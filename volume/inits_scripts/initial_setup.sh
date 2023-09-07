@@ -18,12 +18,12 @@ if [ -d "/zephyr/soc_debugger" ]; then
     echo -e "\e[32msoc_debugger repo already exists\e[0m\n"
 else
     cd /zephyr && 
-    echo -e "\e[32m Cloning efinix/soc-debugger repo into soc_debugger folder.\e[0m\n" && \
-    git clone https://github.com/Efinix-Inc/soc-debugger soc_debugger 
+    echo -e "\e[32m Cloning efinix/sapphire-soc-debugger repo into soc_debugger folder.\e[0m\n" && \
+    git clone https://github.com/Efinix-Inc/sapphire-soc-debugger.git soc_debugger 
     if [ -d "/zephyr/soc_debugger"]; then
-        echo -e "\e[32mefinix/soc-debugger repo clone completed.\e[0m\n"
+        echo -e "\e[32mefinix/sapphire-soc-debugger repo clone completed.\e[0m\n"
     else 
-        echo -e "\e[32mefinix/soc-debugger repo failed to clone.\e[0m\n"
+        echo -e "\e[32mefinix/sapphire-soc-debugger repo failed to clone.\e[0m\n"
     fi
 fi
 
@@ -32,12 +32,12 @@ if [ -d "/zephyr/dt-generator" ]; then
     echo -e "\e[32mdt-generator repo already exists\e[0m\n"
 else
     cd /zephyr && 
-    echo -e "\e[32m setup dt-generator repo\e[0m\n" && \
-    git clone https://github.com/Efinix-Inc/dt-generator.git dt-generator
+    echo -e "\e[32m setup efinix/sapphire-soc-dt-generator repo\e[0m\n" && \
+    git clone https://github.com/Efinix-Inc/sapphire-soc-dt-generator.git dt-generator
     if [ -d "/zephyr/soc_debugger"]; then
-        echo -e "\e[32mefinix/dt-generator repo clone completed.\e[0m\n"
+        echo -e "\e[32mefinix/sapphire-soc-dt-generator repo clone completed.\e[0m\n"
     else 
-        echo -e "\e[32mefinix/dt-generator repo failed to clone.\e[0m\n"
+        echo -e "\e[32mefinix/sapphire-soc-dt-generator repo failed to clone.\e[0m\n"
     fi
 fi
 
@@ -101,3 +101,5 @@ else
     chmod +x /zephyr/bin/openocd && \
     echo -e "\e[32mDone Copied Openocd!!!\e[0m\n"
 fi
+
+echo -e "\e[32mZephyr Initialization Completed!\e[0m\n"
