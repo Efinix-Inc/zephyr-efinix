@@ -15,7 +15,9 @@ Prerequisites
 Please ensure that you have the following hardware and software requirements:
 
 ### Hardware:
+- [Titanium T120F324 Development Kit](https://www.efinixinc.com/products-devkits-triont120bga324.html)
 - [Titanium Ti60F225 Development Kit](https://www.efinixinc.com/products-devkits-titaniumti60f225.html)
+- [Titanium Ti180J484 Development Kit](https://www.efinixinc.com/products-devkits-titaniumti180j484.html)
 
 ### Software:
 
