@@ -63,17 +63,17 @@ Setup
     - You may be asked to `Reload Window` to complete the setup. Click on `Reload Window` to complete the setup
 
 5. **Initial setup of the development environment**
-
+    
+    - Ensure that the following directory available in the /zephyr directory:
+        - /soc_debugger -> OpenOCD Configuration script for Efinix Sapphire SoC: [github:soc-debugger](https://github.com/Efinix-Inc/soc-debugger)
+        - /dt-generator -> Device Tree Generator repository for Efinix Saphhire SoC [github:dt-generator](https://github.com/Efinix-Inc/dt-generator)
+        - /zephyr       -> Zephyr repository for Zephyr project [github:zephyr](https://github.com/Efinix-Inc/zephyr)
+    > ***Note:*** If any of the directory is not exist in the /zephyr directory, you may manually clone the respective repository. 
     - Open the terminal in VS Code, In the command palette, type `Terminal: Create New Terminal (In Active Workspace)` and hit enter
-    - Execute the following commands:
-        - `cd /zephyr`
-        - `./zephyr_efx_setup.sh` --> This script will pull the Zephyr project repo with Efinix board support
-        - `./soc_debugger_setup.sh` --> This script will pull SoC Debugger repo for debugging Efinix RISC-V Sapphire SoC into soc_debugger folder
-        > ***Note:***     Use Command `sudo chmod 777 <script name>.sh` to allow the .sh script to be executable.
+    
     - To use your own SoC Configuration, follow the steps below; 
         - Generate your own SoC with our Efinity IP Manager
         - Locate the soc.h which will be available in `embedded_sw/<soc name>/bsp/efinix/EfxSapphireSoc/include/soc.h`
-        - Run `./dts_gen_setup.sh` --> This script will pull the dt-generator repo for automated device tree generation
         - Copy the soc.h from your SoC folder into the dt-generator folder
         - The dt-generator will help you to update all the necessary files with your SoC configuration
         - Run the following command: 
