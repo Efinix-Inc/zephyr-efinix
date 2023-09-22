@@ -70,10 +70,8 @@ Before proceeding with the setup, ensure that the following software are install
    - Open the terminal in VS Code, In the command palette, type `Terminal: Create New Terminal (In Active Workspace)` and hit enter
 
    - In order for west to fetch all the necessary modules and files, west needs to know a specified workspace.
-
-     1. Run `west init` in zephyr (outside of the zephyr os source directory).
-     2. Run `west update` to download some additional stuff.
-
+     - Run `west init` in zephyr (outside of the zephyr os source directory).
+     - Run `west update` to download some additional stuff.
      - This will initialize the workspace so that the `west build` command can be executed.
 
    - To use your own SoC Configuration, follow the steps below;
