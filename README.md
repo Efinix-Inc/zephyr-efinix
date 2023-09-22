@@ -84,7 +84,7 @@ Before proceeding with the setup, ensure that the following software are install
      - Run the following command:
 
 ```
-python3 zephyr_installer.py <soc name> <board name> <targeted device> ./zephyr/ ./dt-generator/soc.h <-m memory configuration>
+python3 dt-generator/zephyr_installer.py <soc name> <board name> <targeted device> ./zephyr/ ./dt-generator/soc.h <-m memory configuration>
 ```
 
 ```
